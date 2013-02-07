@@ -1,0 +1,11 @@
+{
+  "name": "besync",
+  "version": "0.0.1",
+  "description": "async++, utils for async operations on actor objects.",
+  "main": "besync.js",
+  "dependencies": {
+    "async": "~0.1.22",
+    "funct": "0.0.1"
+  },
+  "readme": "# besync\n\nUseful for async object operations on actor objects. Tests and docs to come."
+}
