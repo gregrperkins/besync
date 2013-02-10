@@ -1,11 +1,19 @@
 {
   "name": "besync",
-  "version": "0.0.1",
-  "description": "async++, utils for async operations on actor objects.",
+  "version": "0.0.2",
+  "description": "Utils for async operations on js objects.",
   "main": "besync.js",
   "dependencies": {
     "async": "~0.1.22",
     "funct": "0.0.1"
   },
-  "readme": "# besync\n\nUseful for async object operations on actor objects. Tests and docs to come."
+  "devDependencies": {
+    "mocha": "~1.7",
+    "should": "~1.2.1",
+    "supervisor": "~0.5.0"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --reporter spec",
+    "tdd": "./node_modules/.bin/supervisor --extensions proto,pegjs,js,soy --quiet --no-restart-on exit --exec npm test"
+  }
 }

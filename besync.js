@@ -1,22 +1,22 @@
+var assert = require('assert');
 var async = require('async');
-
 var funct = require('funct');
 
 var besync = {};
 besync.DEBUG = false;
-var assert = require('assert');
+besync.SANITY = true;
 
 besync.waterfall = function (cb, arr, opt_context) {
-  if (besync.DEBUG) {
+  if (besync.SANITY) {
     assert.ok(typeof cb == "function");
     arr.forEach(function(fn) {
       assert.ok(typeof fn == "function");
-    })
+    });
   }
 
   var context = opt_context || this;
 
-  if (arr.length <= 1) {
+  if (!arr.length) {
     // TODO(gregp): more warning?
     return cb.call(context, null);
   }
